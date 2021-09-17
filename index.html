@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Applications | Hillenburg and Bob</title>
+
+	<!-- Favicons-->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+	<link rel="manifest" href="assets/favicons/site.webmanifest">
+
+	<!-- GOOGLE WEB FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+	<!-- BASE CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+
+	<!-- YOUR CUSTOM CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+
+	<!-- MODERNIZR MENU -->
+	<script src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+
+	<nav>
+		<ul class="cd-primary-nav">
+			<li><a href="https://hilenburgandbob.co.ke" class="animated_link">Home</a></li>
+			<li><a href="https://careers.hillenburgandbob.co.ke" class="animated_link">Careers</a></li>
+		</ul>
+	</nav>
+	<!-- /menu -->
+
+	<div class="container-fluid">
+		<div class="row row-height">
+			<div class="col-xl-4 col-lg-4 content-left">
+				<div class="content-left-wrapper">
+					<a href="index.html" id="logo"><img src="img/logo.png" alt="" width="45" height="45"></a>
+					<div id="social">
+						<ul>
+							<li><a href="https://www.facebook.com/hillenburgandbob/"><i class="icon-facebook"></i></a>
+							</li>
+							<li><a href="https://twitter.com/hillandbob"><i class="icon-twitter"></i></a></li>
+							<!-- <li><a href="#0"><i class="icon-google"></i></a></li> -->
+							<li><a href="https://www.linkedin.com/company/hillenburg-and-bob/"><i
+										class="icon-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<!-- /social -->
+					<div>
+						<figure><img src="img/info_graphic_1.svg" alt="" class="img-fluid" width="270" height="270">
+						</figure>
+						<h2>We are Hiring</h2>
+						<p>Do you have what it takes to work in an ever-changing environment? If you believe so, we have
+							openings for internship positions stated on the application portal. We would like to inform
+							you that your resumes are not reviewed by robots, please give us enough time to take a look
+							at them and to inform you on the outcome of your application.</p>
+						<a href="#start" class="btn_1 rounded mobile_btn">Start Now!</a>
+					</div>
+					<div class="copy">© 2021 Hillenburg and Bob LLC.</div>
+				</div>
+				<!-- /content-left-wrapper -->
+			</div>
+			<!-- /content-left -->
+			<div class="col-xl-8 col-lg-8 content-right" id="start">
+				<div id="wizard_container">
+					<div id="top-wizard">
+						<span id="location"></span>
+						<div id="progressbar"></div>
+					</div>
+					<!-- /top-wizard -->
+					<form id="wrapped" method="POST" enctype="multipart/form-data">
+						<input id="website" name="website" type="text" value="">
+						<!-- Leave for security protection, read docs for details -->
+						<div id="middle-wizard">
+
+
+							<!-- /Start Branch ============================== -->
+							<div class="step" data-state="branchtype">
+								<h2 class="section_title">Job Application</h2>
+								<h3 class="main_question">We are looking for the following positions</h3>
+								<div class="form-group">
+									<label class="container_radio version_2">Junior Developer
+										<input type="radio" name="positions" value="Junior-Developer" class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio version_2">Mobile Developer
+										<input type="radio" name="positions" value="Mobile-Developer" class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio version_2">Sales and Marketing Specialist
+										<input type="radio" name="positions" value="Sales-and-Marketing-Specialist"
+											class="required">
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<small>* Start branch radio based </small>
+							</div>
+
+							<!-- /Work Positions > Junior-developer ============================== -->
+							<div class="branch" id="Junior-Developer">
+								<div class="step" data-state="bio">
+									<h2 class="section_title">Job Application</h2>
+									<h3 class="main_question">Junior Developer</h3>
+									<div class="form-group add_bottom_30">
+										<label>Years of experience</label>
+										<label for="ui_designer_experience_1">Choose a range</label>
+										<div class="styled-select clearfix">
+											<select class="form-control required" name="ui_designer_experience_1"
+												id="ui_designer_experience_1">
+												<option value="">Choose a range</option>
+												<option value="entry-level">Entry level</option>
+												<option value="1-2 years">1-2 years</option>
+												<option value="2-3 years">2-3 years</option>
+												<option value="3-4 years">3-4 years</option>
+												<option value="5-6 years">5-6 years</option>
+												<option value="&gt;6years">&gt;6years</option>
+											</select>
+										</div>
+									</div>
+									<label class="custom mb-3">Select your main specialities</label>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="container_check">AngularJS
+													<input type="checkbox" name="ui_designer_experience_2[]"
+														value="AngularJS" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">PHP
+													<input type="checkbox" name="ui_designer_experience_2[]" value="PHP"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">HTML/CSS
+													<input type="checkbox" name="ui_designer_experience_2[]"
+														value="HTML/CSS" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="container_check">Flutter
+													<input type="checkbox" name="ui_designer_experience_2[]"
+														value="Flutter" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">Git
+													<input type="checkbox" name="ui_designer_experience_2[]" value="Git"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<!-- /row-->
+									<label class="add_top_20">Tools Knowledge <small>(Separated by
+											comas)</small></label>
+									<div class="form-group">
+										<label for="tools_ui_designer">Ex. Illustrator...</label>
+										<input type="text" name="tools_ui_designer" id="tools_ui_designer"
+											class="form-control required">
+									</div>
+
+								</div>
+							</div>
+							<!-- /step-->
+
+							<!-- /Work Positions > Mobile Developer ============================== -->
+							<div class="branch" id="Mobile-Developer">
+								<div class="step" data-state="bio">
+									<h2 class="section_title">Job Application</h2>
+									<h3 class="main_question">Mobile Developer</h3>
+									<div class="form-group add_bottom_30">
+										<label>Years of experience</label>
+										<label for="backend_experience_1">Choose a range</label>
+										<div class="styled-select clearfix">
+											<select class="form-control required" name="backend_experience_1"
+												id="backend_experience_1">
+												<option value="">Choose a range</option>
+												<option value="Entry-Level">Entry-level</option>
+												<option value="1-2 years">1-2 years</option>
+												<option value="2-3 years">2-3 years</option>
+												<option value="3-4 years">3-4 years</option>
+												<option value="5-6 years">5-6 years</option>
+												<option value="&gt;6years">&gt;6years</option>
+											</select>
+										</div>
+									</div>
+									<label class="custom mb-3">Select your main specialities</label>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="container_check">Java
+													<input type="checkbox" name="backend_experience_2[]" value="Java"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">XML
+													<input type="checkbox" name="backend_experience_2[]" value="XML"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">Flutter
+													<input type="checkbox" name="backend_experience_2[]" value="Dart"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="container_check">Kotlin
+													<input type="checkbox" name="backend_experience_2[]" value="Java"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">Git
+													<input type="checkbox" name="backend_experience_2[]" value="Git"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<!-- <div class="form-group">
+											    <label class="container_check">Perl
+											        <input type="checkbox" name="backend_experience_2[]" value="Perl" class="required">
+											        <span class="checkmark"></span>
+											    </label>
+											</div> -->
+										</div>
+									</div>
+									<!-- /row-->
+								</div>
+							</div>
+							<!-- /step-->
+
+							<!-- /Work Positions > Sales and Marketing Specialist ============================== -->
+							<div class="branch" id="Sales-and-Marketing-Specialist">
+								<div class="step" data-state="bio">
+									<h2 class="section_title">Job Application</h2>
+									<h3 class="main_question">Sales and Marketing Specialist</h3>
+									<div class="form-group add_bottom_30">
+										<label>Years of experience</label>
+										<label for="frontend_experience_1">Choose a range</label>
+										<div class="styled-select clearfix">
+											<select class="form-control required" name="frontend_experience_1"
+												id="frontend_experience_1">
+												<option value="">Choose a range</option>
+												<option value="entry-level">Entry-level</option>
+												<option value="1-2 years">1-2 years</option>
+												<option value="2-3 years">2-3 years</option>
+												<option value="3-4 years">3-4 years</option>
+												<option value="5-6 years">5-6 years</option>
+												<option value="&gt;6years">&gt;6years</option>
+											</select>
+										</div>
+									</div>
+									<label class="custom mb-3">Select your main specialities</label>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="container_check">Marketing strategy
+													<input type="checkbox" name="frontend_experience_2[]"
+														value="Marketing strategy" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">Microsoft Office
+													<input type="checkbox" name="frontend_experience_2[]"
+														value="Microsoft Office" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">Social Media Management
+													<input type="checkbox" name="frontend_experience_2[]"
+														value="Social Media Management" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="container_check">Customer Service
+													<input type="checkbox" name="frontend_experience_2[]"
+														value="Customer Service" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">CRM
+													<input type="checkbox" name="frontend_experience_2[]" value="CRM"
+														class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="form-group">
+												<label class="container_check">Market research
+													<input type="checkbox" name="frontend_experience_2[]"
+														value="Market research" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<!-- /row-->
+
+								</div>
+							</div>
+							<!-- /step-->
+
+							<div class="step" id="bio">
+								<h2 class="section_title">Presentation</h2>
+								<h3 class="main_question">Personal info</h3>
+								<div class="form-group add_top_30">
+									<label for="name">First and Last Name</label>
+									<input type="text" name="name" id="name" class="form-control required"
+										onchange="getVals(this, 'name_field');">
+								</div>
+								<div class="form-group">
+									<label for="email">Email Address</label>
+									<input type="email" name="email" id="email" class="form-control required"
+										onchange="getVals(this, 'email_field');">
+								</div>
+								<div class="form-group">
+									<label for="phone">Phone</label>
+									<input type="text" name="phone" id="phone" class="form-control required">
+								</div>
+								<label>Gender</label>
+								<div class="form-group radio_input">
+									<label class="container_radio mr-3">Male
+										<input type="radio" name="gender" value="Male" class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio">Female
+										<input type="radio" name="gender" value="Female" class="required">
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="form-group add_bottom_30 add_top_20">
+									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
+											150KB for demo limit)</small></label>
+									<div class="fileupload">
+										<input type="file" name="fileupload"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+											class="required">
+									</div>
+								</div>
+							</div>
+
+							<div class="submit step">
+								<div class="summary">
+									<div class="wrapper">
+										<h3>Thank your for your time<br><span id="name_field"></span>!</h3>
+										<p>We shall contact you shortly using this email: <strong
+												id="email_field"></strong></p>
+									</div>
+									<div class="text-center">
+										<div class="form-group terms">
+											<label class="container_check">Please accept our <a href="#"
+													data-toggle="modal" data-target="#terms-txt">Terms and
+													conditions</a> before Submit
+												<input type="checkbox" name="terms" value="Yes" class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /step last-->
+
+						</div>
+						<!-- /middle-wizard -->
+						<div id="bottom-wizard">
+							<button type="button" name="backward" class="backward">Prev</button>
+							<button type="button" name="forward" class="forward">Next</button>
+							<button type="submit" name="process" class="submit">Submit</button>
+						</div>
+						<!-- /bottom-wizard -->
+					</form>
+				</div>
+				<!-- /Wizard container -->
+			</div>
+			<!-- /content-right-->
+		</div>
+		<!-- /row-->
+	</div>
+	<!-- /container-fluid -->
+
+	<div class="cd-overlay-nav">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-nav -->
+
+	<div class="cd-overlay-content">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-content -->
+
+	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+	<!-- /menu button -->
+
+	<!-- Modal terms -->
+	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<!-- <div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+				</div> -->
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+	<!-- COMMON SCRIPTS -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/common_scripts.min.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/common_functions.js"></script>
+	<script src="js/file-validator.js"></script>
+
+	<!-- Wizard script-->
+	<script src="js/func_3.js"></script>
+
+
+</body>
+
+</html>

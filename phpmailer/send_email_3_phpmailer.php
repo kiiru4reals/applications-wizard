@@ -37,8 +37,8 @@ $mail = new PHPMailer(true);
 
 try {
 
-    $mail->setFrom('careers@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');                    // Email Address and Name FROM
-    $mail->addAddress('kiiru@hillenburgandbob.co.ke', 'Kiiru Maina');                             // Email Address and Name TO - Name is optional
+    $mail->setFrom('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');                    // Email Address and Name FROM
+    // $mail->addAddress('kiiru@hillenburgandbob.co.ke', 'Kiiru Maina');                             // Email Address and Name TO - Name is optional
     $mail->addReplyTo('hr@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');              // Email Address and Name NOREPLY
     $mail->isHTML(true);                                                       
     $mail->Subject = 'Thanks for your application';                                       // Email Subject

@@ -42,14 +42,14 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtpserver';                           // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'username';                             // SMTP username
-    $mail->Password   = 'password';                             // SMTP password
+    $mail->Username   = 'noreply@hillenburgandbob.co.ke';                             // SMTP username
+    $mail->Password   = 'PAG&1_dmake';                             // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients - main edits
-    $mail->setFrom('careers@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');                    // Email Address and Name FROM
-    $mail->addAddress('kiiru@hillenburgandbob.co.ke', 'Kiiru Maina');                             // Email Address and Name TO - Name is optional
+    $mail->setFrom('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');                    // Email Address and Name FROM
+    // $mail->addAddress('hr@hillenburgandbob.co.ke', 'Human Resource');                             // Email Address and Name TO - Name is optional
     $mail->addReplyTo('hr@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');              // Email Address and Name NOREPLY
     $mail->isHTML(true);                                                       
     $mail->Subject = 'Thanks for your application';                                       // Email Subject

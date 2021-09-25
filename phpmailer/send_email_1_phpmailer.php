@@ -19,7 +19,7 @@
     
     <script type="text/javascript">
     function delayedRedirect(){
-        window.location = "../index-3.html"
+        window.location = "../index.html"
     }
     </script>
 
@@ -37,47 +37,16 @@ $mail = new PHPMailer(true);
 
 try {
 
-    $mail->setFrom('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');                    // Email Address and Name FROM
-    // $mail->addAddress('kiiru@hillenburgandbob.co.ke', 'Kiiru Maina');                             // Email Address and Name TO - Name is optional
-    $mail->addReplyTo('hr@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');              // Email Address and Name NOREPLY
+    //Recipients - main edits
+    $mail->setFrom('careers@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');                    // Email Address and Name FROM
+    $mail->addAddress('hr@hillenburgandbob.co.ke', 'Kiiru at Hillenburg');                             // Email Address and Name TO - Name is optional
+    $mail->addReplyTo('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');              // Email Address and Name NOREPLY
     $mail->isHTML(true);                                                       
-    $mail->Subject = 'Thanks for your application';                                       // Email Subject
+    $mail->Subject = 'Message from Hillenburg and Bob Careers';                                       // Email Subject
 
     //The email body message
-    $message = "<strong>Job Application</strong><br />";
-    $message .= "<br />Interested in the following position: " . $_POST['positions'];
-
-        if (isset($_POST['ui_designer_experience_1']) && $_POST['ui_designer_experience_1'] != "")
-            {
-                $message .= "<br />Years of experience: " . $_POST['ui_designer_experience_1'];
-                $message .= "<br /><br />Specialities:<br />";
-                foreach($_POST['ui_designer_experience_2'] as $value)
-                    {
-                        $message .= "- " . trim(stripslashes($value)) . "<br />";
-                    };
-                $message .= "<br />Tools Knowledge: " . $_POST['tools_ui_designer'] . "<br />";
-            }
-                
-        if (isset($_POST['backend_experience_1']) && $_POST['backend_experience_1'] != "")
-            {
-                $message .= "<br />Years of experience: " . $_POST['backend_experience_1'];
-                $message .= "<br />Specialities:<br />";
-                foreach($_POST['backend_experience_2'] as $value)
-                    {
-                        $message .= "- " . trim(stripslashes($value)) . "<br />";
-                    };
-            }
-        if (isset($_POST['frontend_experience_1']) && $_POST['frontend_experience_1'] != "")
-            {
-                $message .= "<br />Years of experience: " . $_POST['frontend_experience_1'];
-                $message .= "<br />Specialities:<br />";
-                foreach($_POST['frontend_experience_2'] as $value)
-                    {
-                        $message .= "- " . trim(stripslashes($value)) . "<br />";
-                    };
-            }
-    $message .= "<br /><strong>Presentation</strong>";
-    $message .= "<br />First and Last Name: " . $_POST['name'];
+    $message  = "<strong>Presentation</strong><br />";
+    $message .= "First and Last Name: " . $_POST['name'];
     $message .= "<br />Email: " . $_POST['email'];
     $message .= "<br />Telephone: " . $_POST['phone'];
     $message .= "<br />Gender: " . $_POST['gender'];                
@@ -102,17 +71,40 @@ try {
             $errors[]="Extension not allowed, please choose a .pdf, .doc, .docx file.";
         }
         // Set the files size limit. Use this tool to convert the file size param https://www.thecalculator.co/others/File-Size-Converter-69.html
-        if($file_size > 153600){
+        if($file_size > 2097152){
             $errors[]='File size must be max 150Kb';
         }
         if(empty($errors)==true){
             move_uploaded_file($file_tmp,"../upload_files/".$FinalFilename);
-            $message .= "<br />Resume: http://applications.hillenburgandbob.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
+            $message .= "<br />Resume: https://applications.hillenburgandbob.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
         }else{
             $message .= "<br />File name: no files uploaded";
             }
         };
         /* end FILE UPLOAD */
+
+    $message .= "<br /><br /><strong>Work Availability</strong>";
+    $message .= "<br />Are you available for work: " . $_POST['availability'];
+
+        if (isset($_POST['minimum_salary_full_time']) && $_POST['minimum_salary_full_time'] != "")
+            {
+                $message .= "<br />Minimum salary: " . $_POST['minimum_salary_full_time'];
+                $message .= "<br />How soon would you be looking to start? " . $_POST['start_availability_full_time'];
+                $message .= "<br />Are you willing to work remotely? " . $_POST['remotely_full_time'];
+            }
+        if (isset($_POST['minimum_salary_part_time']) && $_POST['minimum_salary_part_time'] != "")
+            {
+                $message .= "<br />Minimum salary: " . $_POST['minimum_salary_part_time'];
+                $message .= "<br />How soon would you be looking to start? " . $_POST['start_availability_part_time'];
+                $message .= "<br />When you prefer to work? " . $_POST['day_preference_part_time'];
+            }
+        if (isset($_POST['fixed_rate_contract']) && $_POST['fixed_rate_contract'] != "")
+            {
+                $message .= "<br />Minimum fixed rate: " . $_POST['fixed_rate_contract'];
+                $message .= "<br />Minimum hourly rate: " . $_POST['hourly_rate_contract'];
+                $message .= "<br />Minimum hours for a contract: " . $_POST['minimum_hours_conctract'];
+                $message .= "<br />Are you willing to work remotely? " . $_POST['remotely_contract'];
+            }
                         
     $message .= "<br /><br />Terms and conditions accepted: " . $_POST['terms'];
 

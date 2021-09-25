@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Applications | Hillenburg and Bob</title>
 
     <!-- GOOGLE WEB FONT -->
@@ -18,7 +19,7 @@
     
     <script type="text/javascript">
     function delayedRedirect(){
-        window.location = "../index-3.html"
+        window.location = "../index.html"
     }
     </script>
 
@@ -42,53 +43,21 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtpserver';                           // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'noreply@hillenburgandbob.co.ke';                             // SMTP username
-    $mail->Password   = 'PAG&1_dmake';                             // SMTP password
+    $mail->Username   = 'careers@hillenburgandbob.co.ke';                             // SMTP username
+    $mail->Password   = 'K=w=%RQYPdB?';                             // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients - main edits
-    $mail->setFrom('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');                    // Email Address and Name FROM
-    // $mail->addAddress('hr@hillenburgandbob.co.ke', 'Human Resource');                             // Email Address and Name TO - Name is optional
-    $mail->addReplyTo('hr@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob');              // Email Address and Name NOREPLY
+    $mail->setFrom('careers@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');                    // Email Address and Name FROM
+    $mail->addAddress('hr@hillenburgandbob.co.ke', 'Kiiru at Hillenburg');                             // Email Address and Name TO - Name is optional
+    $mail->addReplyTo('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');              // Email Address and Name NOREPLY
     $mail->isHTML(true);                                                       
-    $mail->Subject = 'Thanks for your application';                                       // Email Subject
+    $mail->Subject = 'Message from Hillenburg and Bob Careers';                                       // Email Subject
 
-    //The email body message
-    $message = "<strong>Job Application</strong><br />";
-    $message .= "<br />Interested in the following position: " . $_POST['positions'];
-
-        if (isset($_POST['ui_designer_experience_1']) && $_POST['ui_designer_experience_1'] != "")
-            {
-                $message .= "<br />Years of experience: " . $_POST['ui_designer_experience_1'];
-                $message .= "<br /><br />Specialities:<br />";
-                foreach($_POST['ui_designer_experience_2'] as $value)
-                    {
-                        $message .= "- " . trim(stripslashes($value)) . "<br />";
-                    };
-                $message .= "<br />Tools Knowledge: " . $_POST['tools_ui_designer'] . "<br />";
-            }
-                
-        if (isset($_POST['backend_experience_1']) && $_POST['backend_experience_1'] != "")
-            {
-                $message .= "<br />Years of experience: " . $_POST['backend_experience_1'];
-                $message .= "<br />Specialities:<br />";
-                foreach($_POST['backend_experience_2'] as $value)
-                    {
-                        $message .= "- " . trim(stripslashes($value)) . "<br />";
-                    };
-            }
-        if (isset($_POST['frontend_experience_1']) && $_POST['frontend_experience_1'] != "")
-            {
-                $message .= "<br />Years of experience: " . $_POST['frontend_experience_1'];
-                $message .= "<br />Specialities:<br />";
-                foreach($_POST['frontend_experience_2'] as $value)
-                    {
-                        $message .= "- " . trim(stripslashes($value)) . "<br />";
-                    };
-            }
-    $message .= "<br /><strong>Presentation</strong>";
-    $message .= "<br />First and Last Name: " . $_POST['name'];
+   //The email body message
+    $message  = "<strong>Presentation</strong><br />";
+    $message .= "First and Last Name: " . $_POST['name'];
     $message .= "<br />Email: " . $_POST['email'];
     $message .= "<br />Telephone: " . $_POST['phone'];
     $message .= "<br />Gender: " . $_POST['gender'];                
@@ -113,21 +82,49 @@ try {
             $errors[]="Extension not allowed, please choose a .pdf, .doc, .docx file.";
         }
         // Set the files size limit. Use this tool to convert the file size param https://www.thecalculator.co/others/File-Size-Converter-69.html
-        if($file_size > 153600){
-            $errors[]='File size must be max 150Kb';
+        if($file_size > 2097152){
+            $errors[]='File size must be max 2 MB';
         }
         if(empty($errors)==true){
             move_uploaded_file($file_tmp,"../upload_files/".$FinalFilename);
-            $message .= "<br />Resume: http://careers.hillenburgandbob.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
+            $message .= "<br />Resume: https://applications.hilenburgandbob.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
         }else{
             $message .= "<br />File name: no files uploaded";
             }
         };
         /* end FILE UPLOAD */
+
+    $message .= "<br /><br /><strong>Work Availability</strong>";
+    $message .= "<br />Are you available for work: " . $_POST['availability'];
+
+        if (isset($_POST['minimum_salary_full_time']) && $_POST['minimum_salary_full_time'] != "")
+            {
+                $message .= "<br />Minimum salary: " . $_POST['minimum_salary_full_time'];
+                $message .= "<br />How soon would you be looking to start? " . $_POST['start_availability_full_time'];
+                $message .= "<br />Are you willing to work remotely? " . $_POST['remotely_full_time'];
+            }
+        if (isset($_POST['minimum_salary_part_time']) && $_POST['minimum_salary_part_time'] != "")
+            {
+                $message .= "<br />Minimum salary: " . $_POST['minimum_salary_part_time'];
+                $message .= "<br />How soon would you be looking to start? " . $_POST['start_availability_part_time'];
+                $message .= "<br />When you prefer to work? " . $_POST['day_preference_part_time'];
+            }
+        if (isset($_POST['fixed_rate_contract']) && $_POST['fixed_rate_contract'] != "")
+            {
+                $message .= "<br />Minimum fixed rate: " . $_POST['fixed_rate_contract'];
+                $message .= "<br />Minimum hourly rate: " . $_POST['hourly_rate_contract'];
+                $message .= "<br />Minimum hours for a contract: " . $_POST['minimum_hours_conctract'];
+                $message .= "<br />Are you willing to work remotely? " . $_POST['remotely_contract'];
+            }
                         
     $message .= "<br /><br />Terms and conditions accepted: " . $_POST['terms'];
 
-	$mail->Body = "" . $message . "";
+	// Get the email's html content
+    $email_html = file_get_contents('template-email.html');
+
+    // Setup html content
+    $body = str_replace(array('message'),array($message),$email_html);
+    $mail->MsgHTML($body);
 
     $mail->send();
 
@@ -137,7 +134,13 @@ try {
     $mail->addAddress($_POST['email']); // Email address entered on form
     $mail->isHTML(true);
     $mail->Subject    = 'Confirmation'; // Custom subject
-    $mail->Body = "" . $message . "";
+    
+    // Get the email's html content
+    $email_html_confirm = file_get_contents('confirmation.html');
+
+    // Setup html content
+    $body = str_replace(array('message'),array($message),$email_html_confirm);
+    $mail->MsgHTML($body);
 
     $mail->Send();
 
@@ -156,6 +159,7 @@ try {
 	} catch (Exception $e) {
 	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 	}
+
 	
 ?>
 <!-- END SEND MAIL SCRIPT -->   

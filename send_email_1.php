@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Applications | Hillenburg and Bob Limited.</title>
+    <meta name="description" content="Potenza - Job Application Form Wizard with Resume upload and Branch feature">
+    <meta name="author" content="Ansonika">
+    <title>Applications | Hillenburg and Bob</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -37,43 +39,11 @@
 <?php
 	$mail = $_POST['email'];
 
-	$to = "hr@hillenburgandbob.co.ke";/* YOUR EMAIL HERE */
-	$subject = "Job application for Hillenburg and Bob";
-	$headers = "From: Applications portal <noreply@hillenburgandbob.co.ke>";
+	$to = "hr@hilenburgandbob.co.ke";/* YOUR EMAIL HERE */
+	$subject = "Job application from Hillenburg and Bob Applications";
+	$headers = "From: Job application from Potenza <noreply@hillenburgandbob.co.ke>";
 
-	$message = "JOB APPLICATION";
-		$message .= "\n\nInterested in the following position: " . $_POST['positions'];
-
-		if (isset($_POST['ui_designer_experience_1']) && $_POST['ui_designer_experience_1'] != "")
-			{
-				$message .= "\nYears of experience: " . $_POST['ui_designer_experience_1'];
-				$message .= "\n\nSpecialities:\n";
-				foreach($_POST['ui_designer_experience_2'] as $value)
-					{
-						$message .= "- " . trim(stripslashes($value)) . "\n";
-					};
-				$message .= "\nTools Knowledge: " . $_POST['tools_ui_designer'] . "\n";
-			}
-				
-		if (isset($_POST['backend_experience_1']) && $_POST['backend_experience_1'] != "")
-			{
-				$message .= "\nYears of experience: " . $_POST['backend_experience_1'];
-				$message .= "\nSpecialities:\n";
-				foreach($_POST['backend_experience_2'] as $value)
-					{
-						$message .= "- " . trim(stripslashes($value)) . "\n";
-					};
-			}
-		if (isset($_POST['frontend_experience_1']) && $_POST['frontend_experience_1'] != "")
-			{
-				$message .= "\nYears of experience: " . $_POST['frontend_experience_1'];
-				$message .= "\nSpecialities:\n";
-				foreach($_POST['frontend_experience_2'] as $value)
-					{
-						$message .= "- " . trim(stripslashes($value)) . "\n";
-					};
-			}
-	$message .= "\nPRESENTATION";
+	$message  = "PRESENTATION\n";
 	$message .= "\nFirst and Last Name: " . $_POST['name'];
 	$message .= "\nEmail: " . $_POST['email'];
 	$message .= "\nTelephone: " . $_POST['phone'];
@@ -99,7 +69,7 @@
 			$errors[]="Extension not allowed, please choose a .pdf, .doc, .docx file.";
 		}
 		// Set the files size limit. Use this tool to convert the file size param https://www.thecalculator.co/others/File-Size-Converter-69.html
-		if($file_size > 153600){
+		if($file_size > 2097152){
 			$errors[]='File size must be max 150Kb';
 		}
 		if(empty($errors)==true){
@@ -110,6 +80,29 @@
 			}
 		};
 		/* end FILE UPLOAD */
+
+		$message .= "\n\nWORK AVAILABILITY";
+		$message .= "\nAre you available for work: " . $_POST['availability'];
+
+		if (isset($_POST['minimum_salary_full_time']) && $_POST['minimum_salary_full_time'] != "")
+			{
+				$message .= "\nMinimum salary: " . $_POST['minimum_salary_full_time'];
+				$message .= "\nHow soon would you be looking to start? " . $_POST['start_availability_full_time'];
+				$message .= "\nAre you willing to work remotely? " . $_POST['remotely_full_time'];
+			}
+		if (isset($_POST['minimum_salary_part_time']) && $_POST['minimum_salary_part_time'] != "")
+			{
+				$message .= "\nMinimum salary: " . $_POST['minimum_salary_part_time'];
+				$message .= "\nHow soon would you be looking to start? " . $_POST['start_availability_part_time'];
+				$message .= "\nWhen you prefer to work? " . $_POST['day_preference_part_time'];
+			}
+		if (isset($_POST['fixed_rate_contract']) && $_POST['fixed_rate_contract'] != "")
+			{
+				$message .= "\nMinimum fixed rate: " . $_POST['fixed_rate_contract'];
+				$message .= "\nMinimum hourly rate: " . $_POST['hourly_rate_contract'];
+				$message .= "\nMinimum hours for a contract: " . $_POST['minimum_hours_conctract'];
+				$message .= "\nAre you willing to work remotely? " . $_POST['remotely_contract'];
+			}
 						
 		$message .= "\n\nTerms and conditions accepted: " . $_POST['terms'];
 												
@@ -119,7 +112,7 @@
 		//Confirmation page
 		$user = "$mail";
 		$usersubject = "Thank You";
-		$userheaders = "From: Job application from Hillenburg and Bob <noreply@yourdomain.com>";
+		$userheaders = "From: Job application from Hillenburg and Bob <noreply@hillenburgandbob.co.ke>";
 		/*$usermessage = "Thank you for your time. Your quotation request is successfully submitted.\n"; WITHOUT SUMMARY*/
 						
 		//Confirmation page WITH  SUMMARY
@@ -139,7 +132,7 @@
          </svg>
      </div>
 	<h4><span>Request successfully sent!</span></h4>
-	<small>You will be redirected back in 5 seconds.</small>
+	<small>You will be redirect back in 5 seconds.</small>
 </div>
 </body>
 </html>

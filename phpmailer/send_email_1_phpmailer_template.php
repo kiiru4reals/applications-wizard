@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Applications | Hillenburg and Bob</title>
+    <title>Applications | Just Job Applications</title>
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
@@ -38,11 +38,11 @@ $mail = new PHPMailer(true);
 try {
 
     //Recipients - main edits
-    $mail->setFrom('careers@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');                    // Email Address and Name FROM
-    $mail->addAddress('hr@hillenburgandbob.co.ke', 'Kiiru at Hillenburg');                             // Email Address and Name TO - Name is optional
-    $mail->addReplyTo('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');              // Email Address and Name NOREPLY
+    $mail->setFrom('careers@jobapplications.co.ke', 'Message from Job Applications');                    // Email Address and Name FROM
+    $mail->addAddress('hr@jobapplications.co.ke', 'Job Applications');                             // Email Address and Name TO - Name is optional
+    $mail->addReplyTo('noreply@jobapplications.co.ke', 'Message from Job Applications');              // Email Address and Name NOREPLY
     $mail->isHTML(true);                                                       
-    $mail->Subject = 'Message from Hillenburg and Bob Careers';                                       // Email Subject
+    $mail->Subject = 'Message from Job Applications';                                       // Email Subject
 
     //The email body message
     $message  = "<strong>Presentation</strong><br />";
@@ -76,7 +76,7 @@ try {
         }
         if(empty($errors)==true){
             move_uploaded_file($file_tmp,"../upload_files/".$FinalFilename);
-            $message .= "<br />Resume: https://applications.hilenburgandbob.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
+            $message .= "<br />Resume: https://applications.jobapplications.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
         }else{
             $message .= "<br />File name: no files uploaded";
             }

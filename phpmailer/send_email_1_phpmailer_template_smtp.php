@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Applications | Hillenburg and Bob</title>
+    <title>Applications | Just job applications</title>
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
@@ -43,17 +43,17 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtpserver';                           // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'careers@hillenburgandbob.co.ke';                             // SMTP username
-    $mail->Password   = 'K=w=%RQYPdB?';                             // SMTP password
+    $mail->Username   = 'careers@jobapplications.co.ke';                             // SMTP username
+    $mail->Password   = 'pass';                             // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients - main edits
-    $mail->setFrom('careers@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');                    // Email Address and Name FROM
-    $mail->addAddress('hr@hillenburgandbob.co.ke', 'Kiiru at Hillenburg');                             // Email Address and Name TO - Name is optional
-    $mail->addReplyTo('noreply@hillenburgandbob.co.ke', 'Message from Hillenburg and Bob Careers');              // Email Address and Name NOREPLY
+    $mail->setFrom('careers@jobapplications.co.ke', 'Message from Job Applications');                    // Email Address and Name FROM
+    $mail->addAddress('hr@jobapplications.co.ke', 'Kiiru at Job Applications');                             // Email Address and Name TO - Name is optional
+    $mail->addReplyTo('noreply@jobapplications.co.ke', 'Message from Job Applications');              // Email Address and Name NOREPLY
     $mail->isHTML(true);                                                       
-    $mail->Subject = 'Message from Hillenburg and Bob Careers';                                       // Email Subject
+    $mail->Subject = 'Message from Job Applications';                                       // Email Subject
 
    //The email body message
     $message  = "<strong>Presentation</strong><br />";
@@ -87,7 +87,7 @@ try {
         }
         if(empty($errors)==true){
             move_uploaded_file($file_tmp,"../upload_files/".$FinalFilename);
-            $message .= "<br />Resume: https://applications.hilenburgandbob.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
+            $message .= "<br />Resume: https://applications.jobapplications.co.ke/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
         }else{
             $message .= "<br />File name: no files uploaded";
             }
